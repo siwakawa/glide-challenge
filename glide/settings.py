@@ -44,11 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # Installed and custom apps
     'rest_framework',
     'webpack_loader', # automatically adds webpack bundle to HTML
-    'web'
+    'web',
+    'accounts'
 ]
 
 MIDDLEWARE = [
