@@ -1,0 +1,13 @@
+@import '../../css/imports';
+
+.userHome__emptyState {
+    background-color: $dark-grey2;
+    border-radius: 3px;
+    padding: 48px 0;
+}
+
+.userHome__emptyContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

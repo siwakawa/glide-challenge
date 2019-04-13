@@ -1,0 +1,44 @@
+@import '../../../css/imports';
+
+.header {
+    box-shadow: 0 1px 3px rgba($black, .15);
+    display: block;
+    z-index: 1;
+    color:white;
+}
+
+.header__main {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 12px 0;
+    width: 100%;
+    a{
+        &:link, &:visited{
+            color:white;
+        }
+    }
+    img{
+        max-width: 120px;
+    }
+}
+
+.header__homeLink {
+    align-items: center;
+    display: inline-flex;
+}
+
+.header__siteTitle {
+    color: $white;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 0 18px;
+}
+
+// TODO: Implement this better
+.header__signIn {
+    color: $white;
+}
