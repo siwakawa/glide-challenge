@@ -1,6 +1,7 @@
 export const API_URL = {
     ACCOUNTS: '/api/v1/accounts/',
-    LOG_IN: '/api/v1/log_in/',
+    LOG_IN: '/api/v1/users/log_in/',
+    LOG_OUT: '/api/v1/users/log_out/',
     SIGN_UP: '/api/v1/sign_up/',
     CHECK_USERNAME: '/api/v1/users/check_username/',
 };

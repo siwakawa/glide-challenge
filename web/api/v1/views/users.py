@@ -1,5 +1,5 @@
 """ User API routes """
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework.decorators import list_route
@@ -41,6 +41,11 @@ class UserViewSet(viewsets.ModelViewSet):
         user_data = UserSerializer(matching_user).data
 
         return Response(user_data, status=200)
+
+    @list_route(methods=['post'])
+    def log_out(self, request):
+        logout(request)
+        return Response([], status=200)
 
     @list_route(methods=['post'])
     def sign_up(self, request):

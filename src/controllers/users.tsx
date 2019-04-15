@@ -6,6 +6,9 @@ export default class UsersController {
     public static signIn(data: User, onSuccess: (data) => void, onError: (res) => void) {
         RequestUtils.post(API_URL.LOG_IN, data, onSuccess, onError);
     }
+    public static signOut(onSuccess: (data) => void, onError: (res) => void) {
+        RequestUtils.post(API_URL.LOG_OUT, [], onSuccess, onError);
+    }
 
     public static signUp(data: User, onSuccess: (data) => void, onError: (res) => void) {
         RequestUtils.post(API_URL.SIGN_UP, data, onSuccess, onError);

@@ -6,3 +6,16 @@ html{
     background-color: $primaryColor;
     color: white;
 }
+
+input {
+    width: 100%;
+    background: none;
+    border:none;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    color: #666;
+    &.danger{
+        border-color: #cc0000;
+        border-width: 2px;
+    }
+}

@@ -1,25 +1,30 @@
 import * as React from 'react';
 import Base from '../../components/Base/Base';
-import Input from '../../components/Input/Input';
 import UsersController from '../../controllers/users';
 import './style.scss';
 
 export default class SignIn extends React.PureComponent<React.Props<React.Component<any>> , {}> {
-    private username: Input;
-    private password: Input;
 
     public render() {
         return (
             <Base>
-                Sign in.
+                <div className="signIn">
+                    <form onSubmit={this.signIn}> 
+                        <input type="text" name="username" placeholder="Enter username" />
+                        <input type="password" name="password" placeholder="Enter password" />
+                        <button type="submit"> Sign In </button>
+                    </form>
+                </div>
             </Base>
         );
     }
 
-    private signIn(e: React.MouseEvent<HTMLElement>) {
+    private signIn(e: any) {
+        e.preventDefault();
+       
         const userData = {
-            username: this.username.getValue(),
-            password: this.password.getValue(),
+            username: e.target.elements.username.value,
+            password: e.target.elements.password.value,
         };
 
         const onSuccess = (data) => window.location.pathname = '/';

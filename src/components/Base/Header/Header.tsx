@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import UsersController from '../../../controllers/users';
 import './style.scss';
 
 interface HeaderProps extends React.Props<React.Component<any>> {
@@ -31,6 +32,22 @@ export default class Header extends React.PureComponent<HeaderProps, {}> {
                     Sign in
                 </NavLink>
             );
+        }else{
+            return (
+                <NavLink
+                    to="/"
+                    className="header__signIn"
+                    onClick={(e)=>{
+                        const onSuccess = (data) => window.location.pathname = '/login';
+
+                        const onError = (res) => console.log(res);
+
+                        UsersController.signOut(onSuccess, onError);
+                    }}
+                    >
+                    Log Out
+                </NavLink>
+            )
         }
     }
 
