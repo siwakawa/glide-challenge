@@ -39,3 +39,12 @@ To launch the project,
 To lint files: `npm run lint`
 
 Before deployment, remember to do: `./manage.py collectstatic`
+
+
+# To do and some comments
+
+Currently you can login with the user created from the django administrator. It would be necessary to develop a Sign Up.
+
+Another thing that is still in the pipeline is to notify the outcome of their actions whether they are successes or failures.
+
+Finally there are some issues that could be improved in a real project, for example the validations in the fields should be generic to be used without repeating code.
