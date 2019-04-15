@@ -42,4 +42,45 @@ export default class RequestUtils {
                 }
             });
     }
+
+    public static delete(path: string, onSuccess: (data) => void, onError: (res) => void) {
+
+        Request
+            .delete(path)
+            .set(REQUEST_HEADER.ACCEPT, CONTENT_TYPE.JSON)
+            .set(REQUEST_HEADER.CSRF, Cookies.get('csrftoken'))
+            .end((err, res) => {
+                if (res && res.ok) {
+                    if (onSuccess) {
+                        onSuccess(res.body);
+                    }
+                } else {
+                    if (onError) {
+                        onError(res);
+                    }
+                }
+            });
+    }
+
+    public static put(path: string, data, onSuccess: (data) => void, onError: (res) => void) {
+        if (!data) {
+            return;
+        }
+        Request
+            .put(path)
+            .send(data)
+            .set(REQUEST_HEADER.ACCEPT, CONTENT_TYPE.JSON)
+            .set(REQUEST_HEADER.CSRF, Cookies.get('csrftoken'))
+            .end((err, res) => {
+                if (res && res.ok) {
+                    if (onSuccess) {
+                        onSuccess(res.body);
+                    }
+                } else {
+                    if (onError) {
+                        onError(res);
+                    }
+                }
+            });
+    }
 }

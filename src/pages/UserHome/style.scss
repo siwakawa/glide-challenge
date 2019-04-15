@@ -1,13 +1,82 @@
 @import '../../css/imports';
 
-.userHome__emptyState {
-    background-color: $dark-grey2;
-    border-radius: 3px;
-    padding: 48px 0;
-}
+.userHome{
+    padding: 20px;
+    max-width: 980px;
+    margin:40px auto auto;
+    form{ 
+        position: relative;
+        padding: 20px 70px 20px 20px;
+        max-width: 500px;
+        background:#ececec;
+        margin: 10px 0;
+        border-radius: 3px;
+    }
+    hr{
+        margin: 40px 0;
+        height: 1px;
+        box-sizing: border-box;
+        border: none;
+        border-top: 1px solid rgba(204, 204, 204, 0.3);
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+        li {
+            position: relative;
+            padding: 20px 120px 20px 20px;
+            max-width: 500px;
+            background:#ececec;
+            margin: 10px 0;
+            border-radius: 3px;
+            button{
+                &:nth-child(2) {
+                    right: 60px;
+                }
+            }
+            
+        }
+    }
 
-.userHome__emptyContainer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    input {
+        width: 100%;
+        background: none;
+        border:none;
+        border-bottom: 1px solid;
+        padding-bottom: 5px;
+        color: #666;
+        &.danger{
+            border-color: #cc0000;
+            border-width: 2px;
+        }
+    }
+
+    button{
+        position: absolute;
+        background: none;
+        border: 2px solid;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0 5px;
+        top:12px;
+        right: 10px;
+        color: #666;
+        cursor: pointer;
+
+        i{
+            font-size: 22px;
+            line-height: 40px;
+            width: 40px;
+        }
+        &:hover{
+            background: $primaryColor;
+            border-color: $primaryColor;
+            color: white;
+        }
+        &.danger{
+            background: #cc0000;
+            border-color: #cc0000;
+            color: white;
+        }
+    }
 }
